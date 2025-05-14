@@ -150,6 +150,7 @@ exclude:
   - _pages/profiles.md
   - _pages/teaching.md
   - _pages/books.md
+  - _data/cv.yml
 keep_files:
   - CNAME
   - .nojekyll
@@ -222,8 +223,8 @@ display_categories: ["external-services"] # these categories will be displayed o
 # -----------------------------------------------------------------------------
 
 scholar:
-  last_name: ["Dao", "Dao Huy", "Huy Dao", "Đào Huy", "Đào"]
-  first_name: ["Cu", "Huy Cu", "Cu Huy", "Cu.H", "Cừ", "Đào Huy Cừ"]
+  last_name: ["Dao", "Dao Huy", "Huy Dao", "Đào Huy", "Đào", "Đào Huy Cừ"]
+  first_name: ["Cu", "Huy Cu", "Cu Huy", "Cu.H", "Cừ", "Đào Huy Cừ", "Cu,", "Cu, Dao Huy"]
 
   style: apa
   locale: en
