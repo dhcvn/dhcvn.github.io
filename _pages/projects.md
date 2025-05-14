@@ -2,64 +2,20 @@
 layout: page
 title: projects
 permalink: /projects/
-description: A growing collection of your cool projects.
 nav: true
 nav_order: 3
-display_categories: [work, fun]
 horizontal: false
+
 ---
 
-<!-- pages/projects.md -->
-<div class="projects">
-{% if site.enable_project_categories and page.display_categories %}
-  <!-- Display categorized projects -->
-  {% for category in page.display_categories %}
-  <a id="{{ category }}" href=".#{{ category }}">
-    <h2 class="category">{{ category }}</h2>
-  </a>
-  {% assign categorized_projects = site.projects | where: "category", category %}
-  {% assign sorted_projects = categorized_projects | sort: "importance" %}
-  <!-- Generate cards for each project -->
-  {% if page.horizontal %}
-  <div class="container">
-    <div class="row row-cols-1 row-cols-md-2">
-    {% for project in sorted_projects %}
-      {% include projects_horizontal.liquid %}
-    {% endfor %}
-    </div>
-  </div>
-  {% else %}
-  <div class="row row-cols-1 row-cols-md-3">
-    {% for project in sorted_projects %}
-      {% include projects.liquid %}
-    {% endfor %}
-  </div>
-  {% endif %}
-  {% endfor %}
+ This WHO TB Data Summary Page presents country profile data as reported in 2023 and 2024. Table 1 shows a 5-year trend of TB burden estimates, including TB incidence, HIV(+) TB incidence and mortality, and treatment coverage. Table 2 details the 5-year MDR/RR-TB burden estimate, including incidence numbers and percentages among new and previously treated cases. The report also features visualizations: a line graph illustrating the incidence of new and relapse TB cases, HIV-positive TB incidence (rate per 100,000 population per year) from 2010 to 2022, and a population pyramid showing the incidence of notified TB cases by age group and sex in 2022 (number). Given that the WHO updates global TB data and country profiles every October, this report provides a snapshot of Viet Nam's TB situation as default filtering, which would be useful for Vietnam TB control program to quickly refer to WHO estimates.
 
-{% else %}
+<iframe width="600" height="450" src="https://lookerstudio.google.com/embed/reporting/4ca27bf7-fb8e-45dd-852f-f77524d5061c/page/LjZ2D" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
 
-<!-- Display projects without categories -->
+This dashboard display summaries for races in 2025, including the Aikyra Tra Vinh Cross Country Marathon, Dalat Ultra Trail, Quang Binh Discovery Marathon, Thien Cam Half Marathon, and the VnExpress Marathon HCM midnight. This suggests a platform for tracking and reviewing performance in multiple running events. The information include: date of the race, distance, time and pace. This landing page is supportive for runner review their race during the year or in multiple year.
 
-{% assign sorted_projects = site.projects | sort: "importance" %}
+<div class='tableauPlaceholder' id='viz1745058023038' style='position: relative'><noscript><a href='#'><img alt='2025 Race summary ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ra&#47;race_maps&#47;race_map&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='race_maps&#47;race_map' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ra&#47;race_maps&#47;race_map&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1745058023038');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else { vizElement.style.width='100%';vizElement.style.height='727px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
 
-  <!-- Generate cards for each project -->
+This public collection of an over 30,000 research articles published in the 11 medical journals in Viet Nam. The table last updated in November 25, 2024, along with their authors, titles (in Vietnamese), journal name, and links to the full text (Title URL, HTML URL, PDF URL). The articles cover a range of medical research topics, including the application of the Delphi method in nursing, the clinical characteristics of hand, foot, and mouth disease, the effectiveness of a nursing intervention model for stroke patients, knowledge and attitudes towards influenza vaccination among the elderly, and the role of family factors in the mental health of high school students. The table provides a snapshot of recent medical research being conducted and published by researchers in the Health Industry in Viet Nam.
 
-{% if page.horizontal %}
-
-  <div class="container">
-    <div class="row row-cols-1 row-cols-md-2">
-    {% for project in sorted_projects %}
-      {% include projects_horizontal.liquid %}
-    {% endfor %}
-    </div>
-  </div>
-  {% else %}
-  <div class="row row-cols-1 row-cols-md-3">
-    {% for project in sorted_projects %}
-      {% include projects.liquid %}
-    {% endfor %}
-  </div>
-  {% endif %}
-{% endif %}
-</div>
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR1BOdbCbRlOHqIY9SaGHXLXoRkc32of2aT_n_dRx_jMhOl9YNM5ILjnXPI6WbuJULx2ZU9-y9eo6zg/pubhtml?widget=true&amp;headers=false"></iframe>
