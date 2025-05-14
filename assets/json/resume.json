@@ -9,7 +9,7 @@
     "location": {
       "address": "",
       "postalCode": "",
-      "city": "Ha Noi, Viet Nam",
+      "city": "Ha Noi, Viet Nam"
     },
     "profiles": [
       {
@@ -73,21 +73,21 @@
       "area": "Public health",
       "studyType": "BPH",
       "startDate": "2013-09-04",
-      "endDate": "2017-07-31",
+      "endDate": "2017-07-31"
     }
   ],
   "certificates": [
     {
       "name": "Google Data Analytics Professional",
-      "issuer": "Google - Coursera",
+      "issuer": "Google - Coursera"
     },
     {
       "name": "Practical QGIS for mapping public health data in Viet Nam",
-      "issuer": "CDC",
+      "issuer": "CDC"
     },
     {
       "name": "Design Excel Dashboard",
-      "issuer": "Udemy",
+      "issuer": "Udemy"
     }
   ],
   "skills": [
