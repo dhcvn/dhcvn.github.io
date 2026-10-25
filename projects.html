@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dự án Nghiên cứu & Dữ liệu | Cù Huy Đào (Cu Huy Dao)</title>
+  <meta name="description" content="Danh mục các dự án nghiên cứu y tế công cộng, cổng tra cứu dữ liệu bài báo y học V-MEDARCHIVE, dashboard dịch tễ học lao WHO và phân tích hiệu suất thể thao.">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f7ff',
+              100: '#e0effe',
+              500: '#0284c7',
+              600: '#0369a1',
+              700: '#075985',
+              900: '#0c4a6e',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200">
+
+  <!-- Navigation Bar -->
+  <header class="sticky top-0 z-50 glass-nav bg-white/80 dark:bg-slate-900/80 border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center space-x-3 group">
+        <div class="w-10 h-10 rounded-full overflow-hidden ring-2 ring-blue-500/30 group-hover:ring-blue-500 transition">
+          <img src="assets/img/prof_pic.jpg" alt="Cu Huy Dao" class="w-full h-full object-cover">
+        </div>
+        <div>
+          <span class="font-bold text-lg text-slate-900 dark:text-white tracking-tight">Cù Huy Đào</span>
+          <span class="hidden sm:inline-block text-xs text-blue-600 dark:text-blue-400 font-medium ml-1.5 px-2 py-0.5 bg-blue-50 dark:bg-blue-950/60 rounded-full border border-blue-200 dark:border-blue-900">MPH</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
+        <a href="index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">Giới thiệu</a>
+        <a href="projects.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-blue-600 dark:text-blue-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition">Dự án</a>
+        <a href="publications.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">Công bố khoa học</a>
+        <a href="cv.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">Hồ sơ (CV)</a>
+      </nav>
+
+      <!-- Right Controls -->
+      <div class="flex items-center space-x-2">
+        <button type="button" class="theme-toggle p-2 rounded-lg text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition" aria-label="Đổi giao diện sáng/tối">
+          <svg class="theme-icon-light w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+          <svg class="theme-icon-dark w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+        </button>
+        <button id="mobile-menu-btn" type="button" class="md:hidden p-2 rounded-lg text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition" aria-label="Mở menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 px-4 pt-2 pb-4 space-y-1">
+      <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Giới thiệu</a>
+      <a href="projects.html" class="block px-3 py-2 rounded-md text-base font-medium text-blue-600 dark:text-blue-400">Dự án</a>
+      <a href="publications.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Công bố khoa học</a>
+      <a href="cv.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Hồ sơ (CV)</a>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="py-10 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center space-x-2 text-xs font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400 mb-2">
+        <span>Portfolio & Nghiên cứu Ứng dụng</span>
+      </div>
+      <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+        Dự án & Nền tảng Dữ liệu
+      </h1>
+      <p class="text-base text-slate-600 dark:text-slate-400 mt-2 max-w-3xl">
+        Các sản phẩm công nghệ y tế, hệ thống cơ sở dữ liệu tra cứu bài báo khoa học thông minh và dashboard trực quan hóa dịch tễ học y tế công cộng.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="flex-grow py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+
+      <!-- PROJECT 1: V-MEDARCHIVE -->
+      <section id="vmedarchive" class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 md:p-10 shadow-sm">
+        <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-100 dark:border-slate-800 pb-6 mb-8">
+          <div>
+            <div class="flex items-center gap-2 mb-2">
+              <span class="badge-pill bg-blue-600 text-white">Production Live</span>
+              <span class="badge-pill bg-emerald-600 text-white">Google Gemini AI</span>
+              <span class="badge-pill bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-300">45.000+ Bài báo</span>
+            </div>
+            <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 dark:text-white">
+              V-MEDARCHIVE — Cổng tra cứu & CSDL Y học Việt Nam
+            </h2>
+            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">
+              Vietnamese Medical Research Database & Search Portal
+            </p>
+          </div>
+          <div class="flex items-center gap-3">
+            <a href="https://vmed-archieve.web.app" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-500/20 transition">
+              <i class="fas fa-external-link-alt"></i> Mở Ứng dụng Trực tiếp
+            </a>
+          </div>
+        </div>
+
+        <!-- Preview Image Showcase -->
+        <div class="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-md mb-8">
+          <img src="assets/img/vmedarchive_preview.png" alt="Giao diện V-MEDARCHIVE" class="w-full object-cover">
+        </div>
+
+        <!-- Features & Details Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          <div>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-3">
+              <i class="fas fa-bullseye text-blue-500"></i> Mục tiêu & Giá trị cốt lõi
+            </h3>
+            <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
+              <li class="flex items-start gap-2">
+                <i class="fas fa-check-circle text-emerald-500 mt-1 shrink-0"></i>
+                <span>Tập hợp và chuẩn hóa hơn <strong>45.000 bài báo y học</strong> xuất bản trên các tạp chí y học hàng đầu Việt Nam được tính điểm bởi <strong>Hội đồng Giáo sư Nhà nước (HĐGSNN)</strong>.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fas fa-check-circle text-emerald-500 mt-1 shrink-0"></i>
+                <span>Phục vụ cộng đồng bác sĩ lâm sàng, giảng viên đại học y dược, học viên sau đại học (ThS, CK1, CK2, NCS) và sinh viên y khoa tra cứu tài liệu nhanh chóng.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fas fa-check-circle text-emerald-500 mt-1 shrink-0"></i>
+                <span>Cung cấp đường dẫn toàn văn trực tiếp (HTML/PDF) và trích dẫn chuẩn mực cho từng công trình nghiên cứu.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-3">
+              <i class="fas fa-bolt text-amber-500"></i> Tính năng Vượt trội
+            </h3>
+            <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
+              <li class="flex items-start gap-2">
+                <i class="fas fa-search text-blue-500 mt-1 shrink-0"></i>
+                <span><strong>Bộ máy tìm kiếm AST:</strong> Phân tích cú pháp chuyên sâu (Boolean AND/OR/NOT, ngoặc đơn gom nhóm, cụm từ ngoặc kép, tiền tố trường, khử dấu tiếng Việt tự động).</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fas fa-brain text-purple-500 mt-1 shrink-0"></i>
+                <span><strong>Tổng hợp bằng chứng AI:</strong> Ứng dụng Google Gemini 2.0 Flash tóm tắt xu hướng nghiên cứu, phương pháp đối tượng và phát hiện khoảng trống lâm sàng từ tối đa 20 bài báo mới nhất.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fas fa-quote-right text-teal-500 mt-1 shrink-0"></i>
+                <span><strong>Xuất trích dẫn tự động:</strong> Hỗ trợ 3 chuẩn học thuật phổ biến (Vancouver, APA, BibTeX .bib) chỉ với 1 cú click.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fas fa-user-shield text-indigo-500 mt-1 shrink-0"></i>
+                <span><strong>Xác thực 1-chạm:</strong> Tích hợp Google Identity Services (GIS) OAuth 2.0 & Google One Tap bảo mật và mượt mà.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Tech Stack Table -->
+        <div class="mb-8">
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-3">
+            <i class="fas fa-layer-group text-slate-500"></i> Kiến trúc Công nghệ Hiện đại
+          </h3>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-sm border-collapse border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden">
+              <thead class="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                <tr>
+                  <th class="p-3 font-semibold border-b border-slate-200 dark:border-slate-700">Tầng Hệ thống</th>
+                  <th class="p-3 font-semibold border-b border-slate-200 dark:border-slate-700">Công nghệ Áp dụng</th>
+                  <th class="p-3 font-semibold border-b border-slate-200 dark:border-slate-700">Chi tiết Triển khai</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 dark:divide-slate-800">
+                <tr>
+                  <td class="p-3 font-medium text-slate-900 dark:text-white">Frontend SPA</td>
+                  <td class="p-3">React 19, TypeScript, Vite 6, Tailwind CSS</td>
+                  <td class="p-3 text-slate-500 dark:text-slate-400">Giao diện phản hồi tức thì, Design Tokens y tế chuyên sâu, Dark mode</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-medium text-slate-900 dark:text-white">Backend & AI Proxy</td>
+                  <td class="p-3">Google Cloud Run, Node.js ES Module</td>
+                  <td class="p-3 text-slate-500 dark:text-slate-400">Bảo mật GEMINI_API_KEY, Sliding Window IP Rate Limiter (30 req/min)</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-medium text-slate-900 dark:text-white">Hosting & CDN</td>
+                  <td class="p-3">Firebase Hosting (<a href="https://vmed-archieve.web.app" target="_blank" class="text-blue-500 underline">vmed-archieve.web.app</a>)</td>
+                  <td class="p-3 text-slate-500 dark:text-slate-400">Phân phối CDN toàn cầu, rewrite tự động tới dịch vụ Cloud Run</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-medium text-slate-900 dark:text-white">Cơ sở Dữ liệu</td>
+                  <td class="p-3">Google Sheets CSV + Client-side In-Memory</td>
+                  <td class="p-3 text-slate-500 dark:text-slate-400">Tải và phân tích vào RAM một lần, tìm kiếm tức thì độ trễ zero</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Embedded Interactive Sheet -->
+        <div>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white flex items-center justify-between mb-3">
+            <span class="flex items-center gap-2"><i class="fas fa-table text-emerald-500"></i> Cơ sở dữ liệu danh mục bài báo trực tiếp</span>
+            <span class="text-xs text-slate-400 font-normal">Cập nhật tự động</span>
+          </h3>
+          <div class="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-inner">
+            <iframe width="100%" height="450" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR1BOdbCbRlOHqIY9SaGHXLXoRkc32of2aT_n_dRx_jMhOl9YNM5ILjnXPI6WbuJULx2ZU9-y9eo6zg/pubhtml?widget=true&amp;headers=false" frameborder="0"></iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECT 2: WHO TB Data Summary Page -->
+      <section id="who-tb" class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 md:p-10 shadow-sm">
+        <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-100 dark:border-slate-800 pb-6 mb-8">
+          <div>
+            <div class="flex items-center gap-2 mb-2">
+              <span class="badge-pill bg-purple-100 text-purple-700 dark:bg-purple-950 dark:text-purple-300">Looker Studio</span>
+              <span class="badge-pill bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300">Báo cáo Dịch tễ học</span>
+            </div>
+            <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 dark:text-white">
+              WHO TB Data Summary Page (Vietnam Tuberculosis Profile)
+            </h2>
+            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">
+              Phân tích xu hướng gánh nặng bệnh lao quốc gia theo báo cáo của Tổ chức Y tế Thế giới (WHO)
+            </p>
+          </div>
+          <div>
+            <a href="https://lookerstudio.google.com/embed/reporting/4ca27bf7-fb8e-45dd-852f-f77524d5061c/page/LjZ2D" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 transition">
+              <i class="fas fa-expand"></i> Mở Toàn Màn Hình
+            </a>
+          </div>
+        </div>
+
+        <p class="text-sm md:text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+          Trang tổng hợp số liệu bệnh lao trình bày dữ liệu hồ sơ quốc gia Việt Nam theo báo cáo của WHO năm 2023 và 2024. Bảng 1 hiển thị xu hướng ước tính gánh nặng lao 5 năm (tỷ lệ mắc mới, tử vong do lao ở người nhiễm HIV, độ bao phủ điều trị). Bảng 2 chi tiết về ước tính gánh nặng lao kháng đa thuốc (MDR/RR-TB). Báo cáo tích hợp các biểu đồ trực quan hóa chuỗi thời gian từ 2010 đến 2022 và tháp dân số ca bệnh lao theo nhóm tuổi và giới tính.
+        </p>
+
+        <!-- Embedded Looker Studio -->
+        <div class="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm">
+          <iframe width="100%" height="520" src="https://lookerstudio.google.com/embed/reporting/4ca27bf7-fb8e-45dd-852f-f77524d5061c/page/LjZ2D" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+        </div>
+      </section>
+
+      <!-- PROJECT 3: Running Races Dashboard -->
+      <section id="race-map" class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 md:p-10 shadow-sm">
+        <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-100 dark:border-slate-800 pb-6 mb-8">
+          <div>
+            <div class="flex items-center gap-2 mb-2">
+              <span class="badge-pill bg-amber-100 text-amber-700 dark:bg-amber-950 dark:text-amber-300">Tableau Public</span>
+              <span class="badge-pill bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300">Phân tích Thể thao</span>
+            </div>
+            <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 dark:text-white">
+              Running Races Performance Dashboard 2025
+            </h2>
+            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">
+              Hệ thống theo dõi & đánh giá hiệu suất vận động viên tại các giải marathon Việt Nam
+            </p>
+          </div>
+          <div>
+            <a href="https://public.tableau.com/views/race_maps/race_map?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold bg-amber-500 hover:bg-amber-600 text-white transition">
+              <i class="fas fa-external-link-alt"></i> Mở trên Tableau Public
+            </a>
+          </div>
+        </div>
+
+        <p class="text-sm md:text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+          Dashboard trực quan hóa tổng kết các giải chạy marathon lớn trong năm 2025, bao gồm Aikyra Trà Vinh Cross Country Marathon, Dalat Ultra Trail, Quảng Bình Discovery Marathon, Thiên Cầm Half Marathon và VnExpress Marathon HCM Midnight. Hệ thống cung cấp công cụ phân tích phân phối cự ly (distance), thời gian hoàn thành (finish time) và tốc độ trung bình (pace) phục vụ việc đánh giá tiến độ rèn luyện của runner.
+        </p>
+
+        <div class="bg-slate-50 dark:bg-slate-800/60 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 text-center">
+          <p class="text-sm text-slate-600 dark:text-slate-300 mb-4">
+            Do Tableau Public giới hạn bảo mật khi nhúng iframe trên trình duyệt di động, bạn có thể xem trực tiếp dashboard tương tác tại liên kết chính thức:
+          </p>
+          <a href="https://public.tableau.com/views/race_maps/race_map?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm bg-blue-600 hover:bg-blue-700 text-white shadow-md transition">
+            <i class="fas fa-chart-line"></i> Khám phá Dashboard trên Tableau Public
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 py-8 text-center text-sm text-slate-500 dark:text-slate-400">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>&copy; 2026 Cù Huy Đào (Cu Huy Dao). Hosted with pride on GitHub Pages.</p>
+      <div class="flex items-center space-x-4">
+        <a href="https://github.com/dhcvn" target="_blank" class="hover:text-slate-800 dark:hover:text-slate-200"><i class="fab fa-github"></i> GitHub</a>
+        <a href="https://linkedin.com/in/cu-dao-huy-b4b6aa13a" target="_blank" class="hover:text-slate-800 dark:hover:text-slate-200"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="mailto:huycubn119@gmail.com" class="hover:text-slate-800 dark:hover:text-slate-200"><i class="fas fa-envelope"></i> Liên hệ</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

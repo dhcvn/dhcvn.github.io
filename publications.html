@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Công bố Khoa học | Cù Huy Đào (Cu Huy Dao)</title>
+  <meta name="description" content="Danh mục các bài báo khoa học và công trình nghiên cứu dịch tễ học, y tế công cộng của Cù Huy Đào (Cu Huy Dao) công bố trên các tạp chí PLOS ONE, Emerg Infect Dis, BMC Med Educ...">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f7ff',
+              100: '#e0effe',
+              500: '#0284c7',
+              600: '#0369a1',
+              700: '#075985',
+              900: '#0c4a6e',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200">
+
+  <!-- Navigation Bar -->
+  <header class="sticky top-0 z-50 glass-nav bg-white/80 dark:bg-slate-900/80 border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center space-x-3 group">
+        <div class="w-10 h-10 rounded-full overflow-hidden ring-2 ring-blue-500/30 group-hover:ring-blue-500 transition">
+          <img src="assets/img/prof_pic.jpg" alt="Cu Huy Dao" class="w-full h-full object-cover">
+        </div>
+        <div>
+          <span class="font-bold text-lg text-slate-900 dark:text-white tracking-tight">Cù Huy Đào</span>
+          <span class="hidden sm:inline-block text-xs text-blue-600 dark:text-blue-400 font-medium ml-1.5 px-2 py-0.5 bg-blue-50 dark:bg-blue-950/60 rounded-full border border-blue-200 dark:border-blue-900">MPH</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
+        <a href="index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">Giới thiệu</a>
+        <a href="projects.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">Dự án</a>
+        <a href="publications.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-blue-600 dark:text-blue-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition">Công bố khoa học</a>
+        <a href="cv.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">Hồ sơ (CV)</a>
+      </nav>
+
+      <!-- Right Controls -->
+      <div class="flex items-center space-x-2">
+        <button type="button" class="theme-toggle p-2 rounded-lg text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition" aria-label="Đổi giao diện sáng/tối">
+          <svg class="theme-icon-light w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+          <svg class="theme-icon-dark w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+        </button>
+        <button id="mobile-menu-btn" type="button" class="md:hidden p-2 rounded-lg text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition" aria-label="Mở menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 px-4 pt-2 pb-4 space-y-1">
+      <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Giới thiệu</a>
+      <a href="projects.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Dự án</a>
+      <a href="publications.html" class="block px-3 py-2 rounded-md text-base font-medium text-blue-600 dark:text-blue-400">Công bố khoa học</a>
+      <a href="cv.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Hồ sơ (CV)</a>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="py-10 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center space-x-2 text-xs font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400 mb-2">
+        <span>Nghiên cứu Khoa học & Ấn phẩm</span>
+      </div>
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+            Danh mục Công bố Khoa học
+          </h1>
+          <p class="text-base text-slate-600 dark:text-slate-400 mt-2 max-w-2xl">
+            Các công trình nghiên cứu dịch tễ học, sàng lọc bệnh lao, ý định nghề nghiệp y khoa và phân tích dữ liệu khảo sát quốc gia.
+          </p>
+        </div>
+        <div class="flex items-center gap-2">
+          <a href="https://scholar.google.com/citations?user=BRtpt1oAAAAJ" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-900 hover:bg-blue-100 transition shadow-sm">
+            <i class="fas fa-graduation-cap"></i> Hồ sơ Google Scholar
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="flex-grow py-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+
+      <!-- Filter & Search Controls -->
+      <div class="bg-white dark:bg-slate-900 p-4 md:p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col md:flex-row items-center justify-between gap-4">
+        <!-- Search Box -->
+        <div class="relative w-full md:w-96">
+          <i class="fas fa-search absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+          <input type="text" id="pub-search-input" placeholder="Tìm kiếm theo tiêu đề, tác giả, tạp chí..." class="w-full pl-10 pr-4 py-2 rounded-xl text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-500 text-slate-800 dark:text-slate-100 transition">
+        </div>
+
+        <!-- Year Filter Buttons -->
+        <div class="flex flex-wrap items-center gap-1.5 w-full md:w-auto" id="pub-filter-buttons">
+          <button type="button" data-filter="all" class="pub-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-600 text-white shadow-sm transition">Tất cả</button>
+          <button type="button" data-filter="2025" class="pub-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 transition">2025</button>
+          <button type="button" data-filter="2024" class="pub-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 transition">2024</button>
+          <button type="button" data-filter="2022" class="pub-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 transition">2022</button>
+          <button type="button" data-filter="2021" class="pub-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 transition">2021</button>
+          <button type="button" data-filter="2020" class="pub-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 transition">2020</button>
+        </div>
+      </div>
+
+      <!-- Publication Count Status -->
+      <div class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 px-1">
+        Hiển thị: <span id="pub-count" class="text-blue-600 dark:text-blue-400">7</span> công trình khoa học
+      </div>
+
+      <!-- Publications List Container -->
+      <div id="publications-container" class="space-y-6">
+        <!-- Rendered by JavaScript, with fallback SEO elements -->
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 py-8 text-center text-sm text-slate-500 dark:text-slate-400">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>&copy; 2026 Cù Huy Đào (Cu Huy Dao). Hosted with pride on GitHub Pages.</p>
+      <div class="flex items-center space-x-4">
+        <a href="https://github.com/dhcvn" target="_blank" class="hover:text-slate-800 dark:hover:text-slate-200"><i class="fab fa-github"></i> GitHub</a>
+        <a href="https://linkedin.com/in/cu-dao-huy-b4b6aa13a" target="_blank" class="hover:text-slate-800 dark:hover:text-slate-200"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="mailto:huycubn119@gmail.com" class="hover:text-slate-800 dark:hover:text-slate-200"><i class="fas fa-envelope"></i> Liên hệ</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/publications-data.js"></script>
+  <script>
+    // Publication renderer and filtering logic
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('publications-container');
+      const searchInput = document.getElementById('pub-search-input');
+      const countEl = document.getElementById('pub-count');
+      const filterBtns = document.querySelectorAll('.pub-filter-btn');
+
+      let currentYearFilter = 'all';
+      let currentQuery = '';
+
+      function highlightAuthor(authorsText) {
+        return authorsText
+          .replace(/Cu Huy Dao/g, '<strong class="text-slate-900 dark:text-white font-bold underline decoration-blue-500 decoration-2">Cu Huy Dao</strong>')
+          .replace(/Dao Huy Cu/g, '<strong class="text-slate-900 dark:text-white font-bold underline decoration-blue-500 decoration-2">Dao Huy Cu</strong>')
+          .replace(/Huy Cu Dao/g, '<strong class="text-slate-900 dark:text-white font-bold underline decoration-blue-500 decoration-2">Huy Cu Dao</strong>')
+          .replace(/Đào Huy Cừ/g, '<strong class="text-slate-900 dark:text-white font-bold underline decoration-blue-500 decoration-2">Đào Huy Cừ</strong>')
+          .replace(/Dao, Cu Huy/g, '<strong class="text-slate-900 dark:text-white font-bold underline decoration-blue-500 decoration-2">Dao, Cu Huy</strong>')
+          .replace(/Cừ, Đào Huy/g, '<strong class="text-slate-900 dark:text-white font-bold underline decoration-blue-500 decoration-2">Cừ, Đào Huy</strong>');
+      }
+
+      function renderPublications() {
+        const filtered = PUBLICATIONS.filter(pub => {
+          const matchYear = currentYearFilter === 'all' || pub.year.toString() === currentYearFilter;
+          const query = currentQuery.toLowerCase();
+          const matchQuery = !query ||
+            pub.title.toLowerCase().includes(query) ||
+            pub.authors.toLowerCase().includes(query) ||
+            pub.journal.toLowerCase().includes(query) ||
+            (pub.tags && pub.tags.some(t => t.toLowerCase().includes(query)));
+          return matchYear && matchQuery;
+        });
+
+        countEl.textContent = filtered.length;
+
+        if (filtered.length === 0) {
+          container.innerHTML = `
+            <div class="text-center py-12 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800">
+              <i class="fas fa-folder-open text-4xl text-slate-300 dark:text-slate-600 mb-3"></i>
+              <p class="text-base font-semibold text-slate-700 dark:text-slate-300">Không tìm thấy bài báo phù hợp</p>
+              <p class="text-xs text-slate-400 mt-1">Vui lòng thử từ khóa khác hoặc bỏ chọn bộ lọc năm.</p>
+            </div>
+          `;
+          return;
+        }
+
+        container.innerHTML = filtered.map(pub => `
+          <article class="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm hover:border-blue-400 dark:hover:border-blue-500 transition space-y-3">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="badge-pill bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300">${pub.journal} (${pub.year})</span>
+                ${pub.volume ? `<span class="text-xs text-slate-400">Vol. ${pub.volume}</span>` : ''}
+              </div>
+              <span class="text-xs font-mono text-slate-400">DOI: ${pub.doi}</span>
+            </div>
+
+            <h2 class="text-lg md:text-xl font-bold text-slate-900 dark:text-white leading-snug">
+              <a href="${pub.url}" target="_blank" class="hover:text-blue-600 dark:hover:text-blue-400 transition">
+                ${pub.title}
+              </a>
+            </h2>
+
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              ${highlightAuthor(pub.authors)}
+            </p>
+
+            ${pub.tags ? `
+              <div class="flex flex-wrap gap-1.5 pt-1">
+                ${pub.tags.map(t => `<span class="text-[11px] px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#${t}</span>`).join('')}
+              </div>
+            ` : ''}
+
+            <!-- Abstract Accordion -->
+            <div class="pt-2">
+              <details class="group text-sm text-slate-600 dark:text-slate-300">
+                <summary class="cursor-pointer font-medium text-xs text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center gap-1 select-none">
+                  <span>Tóm tắt nghiên cứu (Abstract)</span>
+                  <i class="fas fa-chevron-down text-[10px] group-open:rotate-180 transition-transform"></i>
+                </summary>
+                <div class="mt-2.5 p-3.5 bg-slate-50 dark:bg-slate-800/60 rounded-xl text-xs md:text-sm leading-relaxed text-slate-600 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700/80">
+                  ${pub.abstract}
+                </div>
+              </details>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="pt-3 border-t border-slate-100 dark:border-slate-800/80 flex flex-wrap items-center justify-between gap-3">
+              <div class="flex items-center gap-2">
+                <a href="${pub.url}" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 hover:bg-blue-100 transition">
+                  <i class="fas fa-file-pdf"></i> Xem Bài Báo Gốc
+                </a>
+                <button type="button" onclick="copyBibtex('${pub.id}')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition">
+                  <i class="fas fa-quote-left"></i> Sao chép BibTeX
+                </button>
+              </div>
+            </div>
+          </article>
+        `).join('');
+      }
+
+      window.copyBibtex = function (id) {
+        const item = PUBLICATIONS.find(p => p.id === id);
+        if (item && item.bibtex) {
+          window.copyTextToClipboard(item.bibtex, 'Đã sao chép BibTeX vào bộ nhớ tạm!');
+        }
+      };
+
+      // Search input handler
+      searchInput.addEventListener('input', (e) => {
+        currentQuery = e.target.value;
+        renderPublications();
+      });
+
+      // Year filter handlers
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => {
+            b.classList.remove('bg-blue-600', 'text-white');
+            b.classList.add('bg-slate-100', 'dark:bg-slate-800', 'text-slate-600', 'dark:text-slate-300');
+          });
+          btn.classList.remove('bg-slate-100', 'dark:bg-slate-800', 'text-slate-600', 'dark:text-slate-300');
+          btn.classList.add('bg-blue-600', 'text-white');
+
+          currentYearFilter = btn.getAttribute('data-filter');
+          renderPublications();
+        });
+      });
+
+      renderPublications();
+    });
+  </script>
+</body>
+</html>

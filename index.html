@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cù Huy Đào (Cu Huy Dao) | Public Health Data Analyst & Researcher</title>
+  <meta name="description" content="Trang cá nhân và học thuật của Cù Huy Đào (Cu Huy Dao, MPH) - Chuyên gia phân tích dữ liệu y tế công cộng, nghiên cứu dịch tễ học và giám sát đánh giá (M&E).">
+  <meta name="author" content="Cu Huy Dao">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f7ff',
+              100: '#e0effe',
+              500: '#0284c7',
+              600: '#0369a1',
+              700: '#075985',
+              900: '#0c4a6e',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200">
+
+  <!-- Navigation Bar -->
+  <header class="sticky top-0 z-50 glass-nav bg-white/80 dark:bg-slate-900/80 border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center space-x-3 group">
+        <div class="w-10 h-10 rounded-full overflow-hidden ring-2 ring-blue-500/30 group-hover:ring-blue-500 transition">
+          <img src="assets/img/prof_pic.jpg" alt="Cu Huy Dao" class="w-full h-full object-cover">
+        </div>
+        <div>
+          <span class="font-bold text-lg text-slate-900 dark:text-white tracking-tight">Cù Huy Đào</span>
+          <span class="hidden sm:inline-block text-xs text-blue-600 dark:text-blue-400 font-medium ml-1.5 px-2 py-0.5 bg-blue-50 dark:bg-blue-950/60 rounded-full border border-blue-200 dark:border-blue-900">MPH</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
+        <a href="index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-blue-600 dark:text-blue-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition">Giới thiệu</a>
+        <a href="projects.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">Dự án</a>
+        <a href="publications.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">Công bố khoa học</a>
+        <a href="cv.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">Hồ sơ (CV)</a>
+      </nav>
+
+      <!-- Right Controls -->
+      <div class="flex items-center space-x-2">
+        <!-- Theme Toggle -->
+        <button type="button" class="theme-toggle p-2 rounded-lg text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition" aria-label="Đổi giao diện sáng/tối">
+          <svg class="theme-icon-light w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+          <svg class="theme-icon-dark w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+        </button>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" type="button" class="md:hidden p-2 rounded-lg text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition" aria-label="Mở menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 px-4 pt-2 pb-4 space-y-1">
+      <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-blue-600 dark:text-blue-400">Giới thiệu</a>
+      <a href="projects.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Dự án</a>
+      <a href="publications.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Công bố khoa học</a>
+      <a href="cv.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Hồ sơ (CV)</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-grow">
+    <!-- Hero / Profile Section -->
+    <section class="py-12 md:py-16 border-b border-slate-200/80 dark:border-slate-800/80">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+          <!-- Avatar -->
+          <div class="relative shrink-0">
+            <div class="w-40 h-40 md:w-52 md:h-52 rounded-2xl overflow-hidden shadow-xl ring-4 ring-white dark:ring-slate-800 shadow-blue-500/10">
+              <img src="assets/img/prof_pic.jpg" alt="Cù Huy Đào (Cu Huy Dao)" class="w-full h-full object-cover">
+            </div>
+            <div class="absolute -bottom-2 -right-2 bg-emerald-500 text-white p-2 rounded-xl shadow-lg border-2 border-white dark:border-slate-900" title="Active in Health Data Research">
+              <i class="fas fa-chart-line text-sm"></i>
+            </div>
+          </div>
+
+          <!-- Info & Bio -->
+          <div class="flex-1 text-center md:text-left space-y-4">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 dark:bg-blue-950/60 dark:text-blue-300 border border-blue-200 dark:border-blue-900">
+              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              Public Health Data Analyst & Researcher
+            </div>
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+              Cù Huy Đào <span class="text-slate-500 dark:text-slate-400 font-normal text-2xl md:text-3xl">(Cu Huy Dao)</span>
+            </h1>
+            <p class="text-base md:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl">
+              Thạc sĩ Y tế Công cộng (MPH) tốt nghiệp <a href="https://hmu.edu.vn/" target="_blank" class="text-blue-600 dark:text-blue-400 font-medium hover:underline">Đại học Y Hà Nội</a> (2021-2023). Tôi có nhiều năm kinh nghiệm quản lý và phân tích các tập dữ liệu nghiên cứu y học phức tạp (đặc biệt trong lĩnh vực dịch tễ bệnh phổi & lao), kết hợp hơn một năm đảm nhiệm vai trò Cán bộ Giám sát & Đánh giá (MEL Officer).
+            </p>
+            <p class="text-sm md:text-base text-slate-500 dark:text-slate-400 leading-relaxed max-w-3xl">
+              Thành thạo các giải thuật xử lý dữ liệu nâng cao: <em>khử trùng lặp (data deduplication), liên kết hồ sơ (record linkage), khớp xác suất (probability matching), phân tích điều tra mẫu (survey analysis), gán giá trị thiếu (missing data imputation)</em> và trực quan hóa dữ liệu y tế.
+            </p>
+
+            <!-- Social / Academic Links -->
+            <div class="pt-2 flex flex-wrap justify-center md:justify-start gap-2.5">
+              <a href="mailto:huycubn119@gmail.com" class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-sm bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-400 text-slate-700 dark:text-slate-200 transition shadow-sm">
+                <i class="fas fa-envelope text-red-500"></i> Email
+              </a>
+              <a href="https://scholar.google.com/citations?user=BRtpt1oAAAAJ" target="_blank" class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-sm bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-400 text-slate-700 dark:text-slate-200 transition shadow-sm">
+                <i class="fas fa-graduation-cap text-blue-500"></i> Google Scholar
+              </a>
+              <a href="https://orcid.org/0000-0001-5760-4444" target="_blank" class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-sm bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-emerald-500 text-slate-700 dark:text-slate-200 transition shadow-sm">
+                <i class="fab fa-orcid text-emerald-500"></i> ORCID
+              </a>
+              <a href="https://www.researchgate.net/profile/Cu-Dao" target="_blank" class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-sm bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-teal-500 text-slate-700 dark:text-slate-200 transition shadow-sm">
+                <i class="fab fa-researchgate text-teal-500"></i> ResearchGate
+              </a>
+              <a href="https://linkedin.com/in/cu-dao-huy-b4b6aa13a" target="_blank" class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-sm bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-blue-600 text-slate-700 dark:text-slate-200 transition shadow-sm">
+                <i class="fab fa-linkedin text-blue-600"></i> LinkedIn
+              </a>
+              <a href="https://github.com/dhcvn" target="_blank" class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-sm bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-slate-900 text-slate-700 dark:text-slate-200 transition shadow-sm">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+              <a href="https://youtube.com/@thuchanhthongkeysinh" target="_blank" class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-sm bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-red-600 text-slate-700 dark:text-slate-200 transition shadow-sm">
+                <i class="fab fa-youtube text-red-600"></i> Kênh Thống kê Y sinh
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Tools & Competencies -->
+    <section class="py-8 bg-white/50 dark:bg-slate-900/40 border-b border-slate-200/80 dark:border-slate-800/80">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <span class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Công cụ chuyên môn</span>
+          <div class="flex flex-wrap items-center gap-2.5">
+            <span class="px-3 py-1 rounded-md text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700"><i class="fas fa-terminal text-blue-500 mr-1.5"></i>Stata</span>
+            <span class="px-3 py-1 rounded-md text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700"><i class="fab fa-r-project text-blue-600 mr-1.5"></i>R Language</span>
+            <span class="px-3 py-1 rounded-md text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700"><i class="fas fa-chart-pie text-amber-500 mr-1.5"></i>Tableau</span>
+            <span class="px-3 py-1 rounded-md text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700"><i class="fas fa-database text-emerald-500 mr-1.5"></i>SQL</span>
+            <span class="px-3 py-1 rounded-md text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700"><i class="fas fa-chart-column text-yellow-500 mr-1.5"></i>PowerBI</span>
+            <span class="px-3 py-1 rounded-md text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700"><i class="fab fa-python text-blue-400 mr-1.5"></i>Python</span>
+            <span class="px-3 py-1 rounded-md text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700"><i class="fas fa-clipboard-check text-purple-500 mr-1.5"></i>M&E Frameworks</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects Showcase -->
+    <section class="py-12 md:py-16">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between mb-8">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Dự án Tiêu biểu</h2>
+            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Các nền tảng dữ liệu y tế, dashboard dịch tễ học và cổng tra cứu học thuật</p>
+          </div>
+          <a href="projects.html" class="inline-flex items-center text-sm font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 group">
+            Xem tất cả dự án <i class="fas fa-arrow-right ml-1.5 transform group-hover:translate-x-1 transition-transform"></i>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <!-- Card 1: V-MEDARCHIVE (Featured Big Card) -->
+          <div class="lg:col-span-2 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between">
+            <div>
+              <div class="relative h-56 bg-slate-100 dark:bg-slate-800 overflow-hidden">
+                <img src="assets/img/vmedarchive_preview.png" alt="V-MEDARCHIVE Portal" class="w-full h-full object-cover object-top hover:scale-105 transition duration-500">
+                <div class="absolute top-3 left-3 flex gap-2">
+                  <span class="badge-pill bg-blue-600 text-white shadow-sm">Production Live</span>
+                  <span class="badge-pill bg-emerald-600 text-white shadow-sm">Google Gemini AI</span>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white">
+                  <a href="https://vmed-archieve.web.app" target="_blank" class="hover:text-blue-600 dark:hover:text-blue-400 transition">
+                    V-MEDARCHIVE — Cổng tra cứu & CSDL Y học Việt Nam
+                  </a>
+                </h3>
+                <p class="text-sm text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
+                  Cơ sở dữ liệu danh mục y học học thuật đầu tiên tại Việt Nam với hơn <strong>45.000 bài báo</strong> từ các tạp chí uy tín được HĐGSNN tính điểm (0.75 - 1.0). Tích hợp bộ phân tích cú pháp tìm kiếm AST (Boolean AND/OR/NOT, trường tìm kiếm, tiếng Việt có dấu/không dấu) và tính năng tổng hợp bằng chứng AI với Google Gemini 2.0 Flash.
+                </p>
+                <div class="flex flex-wrap gap-1.5 mt-4">
+                  <span class="text-xs px-2.5 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">React 19 & TypeScript</span>
+                  <span class="text-xs px-2.5 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Cloud Run</span>
+                  <span class="text-xs px-2.5 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Firebase</span>
+                  <span class="text-xs px-2.5 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Google Gemini</span>
+                  <span class="text-xs px-2.5 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Vancouver / APA / BibTeX</span>
+                </div>
+              </div>
+            </div>
+            <div class="px-6 pb-6 pt-2 flex items-center justify-between border-t border-slate-100 dark:border-slate-800/60 mt-4">
+              <a href="https://vmed-archieve.web.app" target="_blank" class="inline-flex items-center text-sm font-semibold text-blue-600 dark:text-blue-400 hover:underline">
+                <i class="fas fa-external-link-alt mr-1.5"></i> Truy cập Web App
+              </a>
+              <a href="projects.html#vmedarchive" class="text-xs font-medium text-slate-500 hover:text-slate-800 dark:hover:text-slate-200">
+                Chi tiết tính năng &rarr;
+              </a>
+            </div>
+          </div>
+
+          <!-- Column for smaller cards -->
+          <div class="space-y-6 flex flex-col justify-between">
+            <!-- Card 2: WHO TB Data Summary -->
+            <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 shadow-sm hover:shadow-md transition flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="badge-pill bg-purple-100 text-purple-700 dark:bg-purple-950 dark:text-purple-300">Looker Studio</span>
+                  <span class="text-xs text-slate-400">Dữ liệu WHO</span>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white">
+                  WHO TB Data Summary Page (Vietnam Profile)
+                </h3>
+                <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
+                  Báo cáo trực quan xu hướng gánh nặng bệnh lao 5 năm tại Việt Nam, tỷ lệ mắc mới, tử vong ở bệnh nhân HIV(+), và độ bao phủ điều trị dựa trên dữ liệu công bố hàng năm của WHO.
+                </p>
+              </div>
+              <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center">
+                <a href="projects.html#who-tb" class="text-xs font-semibold text-blue-600 dark:text-blue-400 hover:underline">
+                  Xem Dashboard tương tác &rarr;
+                </a>
+              </div>
+            </div>
+
+            <!-- Card 3: Running Races Performance Dashboard -->
+            <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 shadow-sm hover:shadow-md transition flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="badge-pill bg-amber-100 text-amber-700 dark:bg-amber-950 dark:text-amber-300">Tableau Public</span>
+                  <span class="text-xs text-slate-400">Thể thao & Hiệu suất</span>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white">
+                  Running Races Performance Dashboard 2025
+                </h3>
+                <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
+                  Nền tảng phân tích và theo dõi thành tích vận động viên tại các giải marathon 2025 (Trà Vinh, Dalat Ultra Trail, Quảng Bình, Thiện Cầm, VnExpress Marathon HCM).
+                </p>
+              </div>
+              <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center">
+                <a href="projects.html#race-map" class="text-xs font-semibold text-blue-600 dark:text-blue-400 hover:underline">
+                  Xem Dashboard Tableau &rarr;
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Publications Section -->
+    <section class="py-12 md:py-16 bg-slate-100/60 dark:bg-slate-900/40 border-t border-slate-200/80 dark:border-slate-800/80">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between mb-8">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Công bố Khoa học Nổi bật</h2>
+            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Các nghiên cứu dịch tễ học và y tế công cộng được bình duyệt quốc tế</p>
+          </div>
+          <a href="publications.html" class="inline-flex items-center text-sm font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 group">
+            Xem toàn bộ 7 công trình <i class="fas fa-arrow-right ml-1.5 transform group-hover:translate-x-1 transition-transform"></i>
+          </a>
+        </div>
+
+        <div class="space-y-4">
+          <!-- Item 1 -->
+          <div class="bg-white dark:bg-slate-900 rounded-xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm hover:border-blue-400 dark:hover:border-blue-500 transition">
+            <div class="flex flex-wrap items-center gap-2 mb-2">
+              <span class="badge-pill bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300">Frontiers in Sleep (2025)</span>
+              <span class="text-xs text-slate-400">DOI: 10.3389/frsle.2024.1486794</span>
+            </div>
+            <h3 class="text-base md:text-lg font-bold text-slate-900 dark:text-white">
+              <a href="https://www.frontiersin.org/journals/sleep/articles/10.3389/frsle.2024.1486794" target="_blank" class="hover:text-blue-600 dark:hover:text-blue-400">
+                Associations of sleep quality and fall risk among older adult outpatients at Thai Binh Medical University Hospital, Northern Vietnam
+              </a>
+            </h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">
+              Nguyen The Diep, Doan Anh Tuan, Tien Van Nguyen, Hoang Minh Anh, <strong class="text-slate-900 dark:text-white">Dao Huy Cu</strong>
+            </p>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="bg-white dark:bg-slate-900 rounded-xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm hover:border-blue-400 dark:hover:border-blue-500 transition">
+            <div class="flex flex-wrap items-center gap-2 mb-2">
+              <span class="badge-pill bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">Emerging Infectious Diseases (2021)</span>
+              <span class="text-xs text-slate-400">DOI: 10.3201/eid2703.204253</span>
+            </div>
+            <h3 class="text-base md:text-lg font-bold text-slate-900 dark:text-white">
+              <a href="https://doi.org/10.3201/eid2703.204253" target="_blank" class="hover:text-blue-600 dark:hover:text-blue-400">
+                Decline of Tuberculosis Burden in Vietnam Measured by Consecutive National Surveys, 2007-2017
+              </a>
+            </h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">
+              Hai Viet Nguyen, Hoa Binh Nguyen, Nhung Viet Nguyen, Frank Cobelens, Alyssa Finlay, <strong class="text-slate-900 dark:text-white">Cu Huy Dao</strong>, et al.
+            </p>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="bg-white dark:bg-slate-900 rounded-xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm hover:border-blue-400 dark:hover:border-blue-500 transition">
+            <div class="flex flex-wrap items-center gap-2 mb-2">
+              <span class="badge-pill bg-purple-100 text-purple-800 dark:bg-purple-950 dark:text-purple-300">PLOS ONE (2020)</span>
+              <span class="text-xs text-slate-400">DOI: 10.1371/journal.pone.0232142</span>
+            </div>
+            <h3 class="text-base md:text-lg font-bold text-slate-900 dark:text-white">
+              <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0232142" target="_blank" class="hover:text-blue-600 dark:hover:text-blue-400">
+                The second national tuberculosis prevalence survey in Vietnam
+              </a>
+            </h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">
+              Hai Viet Nguyen, Edine W. Tiemersma, Hoa Binh Nguyen, Alyssa Finlay, Philippe Glaziou, <strong class="text-slate-900 dark:text-white">Cu Huy Dao</strong>, et al.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 py-8 text-center text-sm text-slate-500 dark:text-slate-400">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>&copy; 2026 Cù Huy Đào (Cu Huy Dao). Hosted with pride on GitHub Pages.</p>
+      <div class="flex items-center space-x-4">
+        <a href="https://github.com/dhcvn" target="_blank" class="hover:text-slate-800 dark:hover:text-slate-200"><i class="fab fa-github"></i> GitHub</a>
+        <a href="https://linkedin.com/in/cu-dao-huy-b4b6aa13a" target="_blank" class="hover:text-slate-800 dark:hover:text-slate-200"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="mailto:huycubn119@gmail.com" class="hover:text-slate-800 dark:hover:text-slate-200"><i class="fas fa-envelope"></i> Liên hệ</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
