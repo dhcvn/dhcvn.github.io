@@ -1,8 +1,8 @@
-# 🌐 Trang Cá nhân & Học thuật: Cù Huy Đào (Cu Huy Dao, MPH)
+# 🌐 Trang cá nhân và học thuật: Đào Huy Cừ (Cừ Đào, MPH)
 
 > **Địa chỉ website chính thức:** [https://dhcvn.github.io](https://dhcvn.github.io)
 
-Repository này chứa toàn bộ mã nguồn của trang web cá nhân và hồ sơ năng lực học thuật của **Cù Huy Đào (Cu Huy Dao, MPH)** — Chuyên gia phân tích dữ liệu y tế công cộng (Public Health Data Analyst & Researcher), Thạc sĩ Y tế Công cộng tốt nghiệp Đại học Y Hà Nội.
+Repository này chứa toàn bộ mã nguồn của trang web cá nhân và hồ sơ năng lực học thuật của **Đào Huy Cừ (Cừ Đào, MPH)** — Chuyên gia phân tích dữ liệu y tế công cộng (Public Health Data Analyst & Researcher), Thạc sĩ Y tế công cộng tốt nghiệp Đại học Y Hà Nội.
 
 ---
 
